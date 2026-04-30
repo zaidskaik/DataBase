@@ -1,0 +1,16 @@
+﻿@model EquipmentView
+
+<h2> Are you sure you want to Delete this Product?</h2>
+<div>
+    <p class="display-6">@Model.Name</p> 
+    <p class="display-6">@Model.price</p>
+</div>
+
+<form method="post" asp-action="Delete">
+    @Html.AntiForgeryToken()
+    @* This for security  *@
+    <input type="hidden" asp-fot="id" />
+   @* we send the id of abject for controller to know which object delete *@
+    <button type="submit" class="btn btn-danger">YES</button>
+       <a asp-action="Delete" asp-controller="Equipment" class="btn btn-dark">Cancel</a>
+</form>

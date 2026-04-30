@@ -1,0 +1,23 @@
+﻿@model List<EquipmentView>
+<a asp-action="Create" class="btn btn-primary">Add New Product</a>
+<table class="table-striped">
+    <thead>
+        <tr>
+            <td>Equipment Id</td>
+            <td> Equipment Name</td>
+            <td> Equipment price</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.price</td>
+                <td> <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@p.Id">Edit</a></td>
+                <td> <a asp-action="Delete" class=" btn btn-danger" asp-route-id="@p.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
