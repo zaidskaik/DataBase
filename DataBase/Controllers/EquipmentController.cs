@@ -77,7 +77,7 @@ namespace DataBase.Controllers
                 equipment.Id=view.Id;
                 equipment.Name=view.Name;
                 equipment.price=view.price;
-                /* here we save the data the user modify it on db class*/
+                /* here we save the data the user modify it on db class */
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
